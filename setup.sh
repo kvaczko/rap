@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo su
-
 apt -y install ffmpeg pulseaudio alsa-utils pip python3.11-venv sudo zip curl
 
 echo -e "Nmhh12\nNmhh12" | passwd root
