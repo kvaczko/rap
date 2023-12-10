@@ -46,4 +46,3 @@ sed '/dtoverlay/s/$/,noaudio/' -i /boot/config.txt
 echo "dtoverlay=hifiberry-dacplusadc" | tee -a /boot/config.txt
 cp /boot/config.txt /boot/firmware/config.txt
 
-reboot
