@@ -28,7 +28,7 @@ mkfs.ext4 -F /dev/vgmd0/media
 mount /dev/vgmd0/media /media/
 echo '/dev/mapper/vgmd0-media /media ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
 
-curl https://raw.githubusercontent.com/kvaczko/tap/main/rap.zip -o /rap.zip
+curl https://raw.githubusercontent.com/kvaczko/rap/main/rap.zip -o /rap.zip
 cd /
 unzip rap.zip
 
