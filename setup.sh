@@ -5,8 +5,13 @@ apt -y install ffmpeg pulseaudio alsa-utils pip python3.11-venv sudo zip curl
 echo -e "Nmhh12\nNmhh12" | passwd root
 
 apt -y install mdadm lvm2
-modprobe md modprobe linear
-modprobe raid0 modprobe raid1 modprobe raid5 modprobe raid6 modprobe raid10
+modprobe md 
+modprobe linear
+modprobe raid0 
+modprobe raid1
+modprobe raid5
+modprobe raid6 
+modprobe raid10
 parted -s -a optimal -s /dev/sda mklabel msdos
 parted -s -a optimal /dev/sda unit s mkpart p ext4 65535 100%
 parted -s /dev/sda set 1 lvm on
@@ -39,10 +44,11 @@ cp /data/config/website.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable website.service
 
-crontab </data/config/crontab.txt
-
 sed -i '/dtparam=audio=on/d' /boot/config.txt 
 sed '/dtoverlay/s/$/,noaudio/' -i /boot/config.txt
 echo "dtoverlay=hifiberry-dacplusadc" | tee -a /boot/config.txt
 cp /boot/config.txt /boot/firmware/config.txt
 
+crontab </data/config/crontab.txt
+
+reboot
