@@ -1,6 +1,8 @@
 #!/bin/bash
 
-apt -y install ffmpeg pulseaudio alsa-utils pip python3.11-venv sudo zip curl hexyl
+#debian 12: apt -y install ffmpeg pulseaudio alsa-utils pip python3.11-venv sudo zip curl hexyl
+#debian 11:
+apt -y install ffmpeg pulseaudio alsa-utils pip python3-venv sudo zip curl hexyl
 
 echo -e "Nmhh12\nNmhh12" | passwd root
 
